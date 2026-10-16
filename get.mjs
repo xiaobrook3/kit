@@ -116,7 +116,6 @@ if (existsSync(bundle) && !process.argv.includes('--no-code')) {
 
 console.log(`
 Read first: ${join(KIT, 'HANDOFF.md')} (section 0), then the notes in ${inbox}
-Start Claude Code with the skills:
-  claude --plugin-dir ${join(KIT, 'plugin')} --plugin-dir ${code} --add-dir ${KIT}
-Or tell a session already running: "Read ${join(KIT, 'CLAUDE.md')} and follow it."
+Skills: in Claude Code, type /add-dir ${KIT}  (five skills load from ${join(KIT, '.claude', 'skills')}, live)
+Then tell it: "Read ${join(KIT, 'CLAUDE.md')} and follow it."
 Run this again for updates.`);
