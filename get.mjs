@@ -20,6 +20,7 @@ const run = (cmd, args) =>
 
 if (existsSync(join(KIT, '.git'))) {
   try {
+    run('git', ['checkout', '-q', '--', '.gitignore', 'README.md', 'get.mjs', 'kit.enc']);
     run('git', ['pull', '--ff-only', '-q']);
   } catch {
     console.log('Could not pull the latest (offline?). Using the copy already here.');
